@@ -1,0 +1,6 @@
+[submodule "svd"]
+	path = svd
+	url = https://github.com/modm-io/cmsis-svd-stm32
+[submodule "Drivers/cmsis-core"]
+	path = Drivers/cmsis-core
+	url = https://github.com/STMicroelectronics/cmsis-core

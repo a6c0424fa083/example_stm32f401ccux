@@ -1,0 +1,23 @@
+//
+//  cmake_config.h (.in)
+//  <Template>
+//
+//
+//  Created by Jannis Sauer on 2026-02-05.
+//
+
+#ifndef CMAKE_CONFIG_H
+#define CMAKE_CONFIG_H
+
+/* CMake version */
+#define PROJECT_VERSION_MAJOR @PROJECT_VERSION_MAJOR@
+#define PROJECT_VERSION_MINOR @PROJECT_VERSION_MINOR@
+#define PROJECT_VERSION_PATCH @PROJECT_VERSION_PATCH@
+
+/* MCU type */
+#define PROJECT_MCU_NAME "@MCU@"
+
+/* Build type */
+#define PROJECT_BUILD_TYPE "@CMAKE_BUILD_TYPE@"
+
+#endif /* CMAKE_CONFIG_H */
