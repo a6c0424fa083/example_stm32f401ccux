@@ -1,0 +1,60 @@
+//
+//  tasks.json
+//  <Template>
+//
+//
+//  Created by Jannis Sauer on 2026-02-05.
+//
+
+
+{
+    "version": "2.0.0",
+    "tasks":
+    [
+        {
+            "label": "Build - Debug",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/build-debug.sh",
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "presentation":
+            {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "close": false
+            }
+        },
+        {
+            "label": "Build - Release",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/build-release.sh",
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "presentation":
+            {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "close": false
+            }
+        },
+        {
+            "label": "Build - Clean Directories",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/remove-build-dirs.sh",
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "presentation":
+            {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "close": false
+            }
+        }
+    ]
+}

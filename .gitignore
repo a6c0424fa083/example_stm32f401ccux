@@ -1,4 +1,5 @@
 **/.DS_Store
-Debug/*
-Release/*
+Debug/**
+Release/**
+build/**
 logs/*.log

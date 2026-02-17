@@ -1,0 +1,128 @@
+//
+//  launch.json
+//  <Template>
+//
+//
+//  Created by Jannis Sauer on 2026-02-05.
+//
+
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Debug/firmware.elf",
+
+            "servertype": "openocd",
+            "interface": "swd",
+
+            "armToolchainPath": "${env:GCC_ARM_NONE_EABI_TOOLCHAIN_PATH}",
+
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+
+            "runToEntryPoint": "main",
+
+            "device": "STM32F401CCUx",
+            "svdFile": "${workspaceFolder}/svd/stm32f4/STM32F401.svd",
+
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
+            "name": "Flash - Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Debug/firmware.elf",
+
+            "servertype": "openocd",
+            "interface": "swd",
+
+            "armToolchainPath": "${env:GCC_ARM_NONE_EABI_TOOLCHAIN_PATH}",
+
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+        
+            "runToEntryPoint": false,
+        
+            "device": "STM32F401CCUx",
+            "svdFile": "${workspaceFolder}/svd/stm32f4/STM32F401.svd",
+        
+            "preLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset run",
+                "quit"
+            ]
+        },
+        {
+            "name": "Flash - Release",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Release/firmware.elf",
+
+            "servertype": "openocd",
+            "interface": "swd",
+
+            "armToolchainPath": "${env:GCC_ARM_NONE_EABI_TOOLCHAIN_PATH}",
+
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+        
+            "runToEntryPoint": false,
+        
+            "device": "STM32F401CCUx",
+            "svdFile": "${workspaceFolder}/svd/stm32f4/STM32F401.svd",
+        
+            "preLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset run",
+                "quit"
+            ]
+        },
+        {
+            "name": "Flash - Erase",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Debug/firmware.elf",
+
+            "servertype": "openocd",
+            "interface": "swd",
+
+            "armToolchainPath": "${env:GCC_ARM_NONE_EABI_TOOLCHAIN_PATH}",
+
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+        
+            "runToEntryPoint": false,
+        
+            "device": "STM32F401CCUx",
+            "svdFile": "${workspaceFolder}/svd/stm32f4/STM32F401.svd",
+        
+            "preLaunchCommands": [
+                "monitor reset halt",
+                "monitor flash erase_sector 0 0 last",
+                "monitor flash erase_check 0",
+                "quit"
+            ]
+        },
+    ]
+}
