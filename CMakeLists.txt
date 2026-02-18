@@ -39,14 +39,14 @@ configure_file(
     ${CMAKE_BINARY_DIR}/generated/cmake_config.h
 )
 
+# configure main target
+add_subdirectory(Core)
+
 # add libraries
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/libs.cmake)
 
 # build project recursively
 add_subdirectory(Drivers)
-add_subdirectory(Core/own)
-
-# NOTE: the rest of the main target stupp is in the Core module
 
 # generate .hex and .bin files
 

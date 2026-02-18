@@ -21,7 +21,6 @@ set(CMSIS_CORE_LIB_DIRS
     CACHE INTERNAL
         "cmsis-core include dirs"
 )
-
 set(CMSIS_CORE_LIB_DEFS
     "" # TODO: add definitions if necessary
 
@@ -48,12 +47,11 @@ target_compile_definitions(CMSIS_CORE_LIB
 #######################################
 
 set(CMSIS_DEV_LIB_DIRS
-    ${CMSIS_LIB_PATH}/Include
+    ${CMSIS_DEV_LIB_PATH}/Include
 
     CACHE INTERNAL
         "cmsis include dirs"
 )
-
 set(CMSIS_DEV_LIB_DEFS
     "USE_HAL_DRIVER"
     "STM32F401xC"
@@ -67,15 +65,15 @@ add_library(CMSIS_DEV_LIB
 )
 target_include_directories(CMSIS_DEV_LIB
     INTERFACE
-        "${CMSIS_DEV_LIB_DIRS}"
+        ${CMSIS_DEV_LIB_DIRS}
 )
 target_compile_definitions(CMSIS_DEV_LIB
     INTERFACE
-        "${CMSIS_DEV_LIB_DEFS}"
+        ${CMSIS_DEV_LIB_DEFS}
 )
 target_link_libraries(CMSIS_DEV_LIB
     INTERFACE
-        "CMSIS_CORE_LIB"
+        CMSIS_CORE_LIB
 )
 
 
@@ -185,10 +183,10 @@ set(HAL_LIB_SRCS
     CACHE INTERNAL
         "HAL sources"
 )
-
 set(HAL_LIB_DIRS
     ${HAL_LIB_PATH}/Inc/Legacy
     ${HAL_LIB_PATH}/Inc
+    ${CMAKE_SOURCE_DIR}
     ${MAIN_DIRS}
     
     CACHE INTERNAL
@@ -205,8 +203,13 @@ target_sources(HAL_LIB
 target_include_directories(HAL_LIB
     PUBLIC
         ${HAL_LIB_DIRS}
+#        ${MAIN_DIRS}
+)
+target_compile_definitions(HAL_LIB
+    PUBLIC
+        "USE_FULL_LL_DRIVER"
 )
 target_link_libraries(HAL_LIB
     PUBLIC
-        ${CMSIS_DEV_LIB_NAME} # this library brings the defines (USE_HAL_DRIVER, STM32F401xC) with it
+        CMSIS_DEV_LIB # this library brings the defines (USE_HAL_DRIVER, STM32F401xC) with it
 )
