@@ -65,35 +65,3 @@ set(HAL_LIB_SRC_LEGACY_PATH
     CACHE INTERNAL
         "hal src path (legacy)"
 )
-
-## add main include dirs: TODO
-#set(MAIN_DIRS
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Inc
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/USB_DEVICE/App
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/USB_DEVICE/Target
-#
-#    CACHE INTERNAL
-#        "the main include directories"
-#)
-#
-## add main sources: TODO
-#set(MAIN_SRCS
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/gpio.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/i2c.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/main.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/spi.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/stm32f4xx_hal_msp.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/stm32f4xx_it.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/syscalls.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/sysmem.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/system_stm32f4xx.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Core/Src/usart.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/startup_stm32f401xc.s
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/USB_DEVICE/App/usb_device.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/USB_DEVICE/App/usbd_cdc_if.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/USB_DEVICE/App/usbd_desc.c
-#    ${CMAKE_CURRENT_SOURCE_DIR}/Core/USB_DEVICE/Target/usbd_conf.c
-#
-#    CACHE INTERNAL
-#        "the main sources"
-#)
