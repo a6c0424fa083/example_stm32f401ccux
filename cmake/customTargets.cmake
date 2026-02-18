@@ -6,6 +6,7 @@
 #  Created by Jannis Sauer on 2026-02-05.
 #
 
+
 # check for graphviz
 find_program(GRAPHVIZ_DOT_EXECUTABLE dot)
 
