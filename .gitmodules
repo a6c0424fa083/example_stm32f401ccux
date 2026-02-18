@@ -10,3 +10,6 @@
 [submodule "Drivers/cmsis-device"]
 	path = Drivers/cmsis-device
 	url = https://github.com/STMicroelectronics/cmsis-device-f4.git
+[submodule "Core"]
+	path = Core
+	url = git@github.com:a6c0424fa083/core_stm32f401ccux.git

@@ -57,6 +57,21 @@
             }
         },
         {
+            "label": "Graphviz (Debug)",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/graphviz.sh",
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "presentation":
+            {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "close": false
+            }
+        },
+        {
             "label": "Format - Current File",
             "type": "shell",
             "command": "clang-format --style=file:${workspaceFolder}/.clang-format -i ${file}",

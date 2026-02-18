@@ -186,8 +186,8 @@ set(HAL_LIB_SRCS
 set(HAL_LIB_DIRS
     ${HAL_LIB_PATH}/Inc/Legacy
     ${HAL_LIB_PATH}/Inc
-    ${CMAKE_SOURCE_DIR}
-    ${MAIN_DIRS}
+    ${CMAKE_SOURCE_DIR} # necssary for stm32_assert.h
+    ${MAIN_DIRS} # necessary for stm32XXxx_hal_conf.h
     
     CACHE INTERNAL
         "HAL include directories"

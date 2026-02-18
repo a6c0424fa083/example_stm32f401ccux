@@ -50,6 +50,13 @@
             "configurePreset": "Release",
             "jobs": 16,
             "verbose": false
+        },
+        {
+            "name": "Graphviz",
+            "configurePreset": "Debug",
+            "jobs": 16,
+            "verbose": false,
+            "targets": [ "graphviz" ]
         }
     ],
     "testPresets": [
