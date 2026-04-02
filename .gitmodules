@@ -13,3 +13,6 @@
 [submodule "Core"]
 	path = Core
 	url = git@github.com:a6c0424fa083/core_stm32f401ccux.git
+[submodule "Drivers/RTT"]
+	path = Drivers/RTT
+	url = https://github.com/SEGGERMicro/RTT.git
