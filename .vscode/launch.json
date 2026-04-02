@@ -11,6 +11,41 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug - Segger",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Debug/firmware.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            "serverpath": "${env:SEGGER_GDB_SERVER_CL_PATH}",
+            "serverArgs": [
+                "-speed",
+                "300"
+            ],
+            "device": "STM32F401CCUx",
+            "interface": "swd",
+            "serialNumber": "",
+            "svdFile": "${workspaceFolder}/SVD/STM32F401.svd",
+            "armToolchainPath": "${env:GCC_ARM_NONE_EABI_TOOLCHAIN_PATH}",
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "searchId": "SEGGER RTT",
+                "decoders": [
+                    {
+                        "port": 0,
+                        "label": "Debug print - RTT",
+                        "type": "console"
+                    }
+                ]
+            },
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
             "name": "Debug",
             "type": "cortex-debug",
             "request": "launch",

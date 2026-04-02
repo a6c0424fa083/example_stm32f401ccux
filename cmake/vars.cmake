@@ -65,3 +65,11 @@ set(HAL_LIB_SRC_LEGACY_PATH
     CACHE INTERNAL
         "hal src path (legacy)"
 )
+
+# segger rtt
+set(RTT_LIB_PATH
+    ${CMAKE_SOURCE_DIR}/Drivers/RTT
+    
+    CACHE INTERNAL
+        "segger rtt base path"
+)

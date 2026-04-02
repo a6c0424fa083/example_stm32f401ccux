@@ -203,7 +203,6 @@ target_sources(HAL_LIB
 target_include_directories(HAL_LIB
     PUBLIC
         ${HAL_LIB_DIRS}
-#        ${MAIN_DIRS}
 )
 target_compile_definitions(HAL_LIB
     PUBLIC
@@ -212,4 +211,38 @@ target_compile_definitions(HAL_LIB
 target_link_libraries(HAL_LIB
     PUBLIC
         CMSIS_DEV_LIB # this library brings the defines (USE_HAL_DRIVER, STM32F401xC) with it
+)
+
+
+
+###################################
+#####   S E G G E R   R T T   #####
+###################################
+
+set(RTT_LIB_SRCS
+    ${RTT_LIB_PATH}/RTT/SEGGER_RTT_printf.c
+    ${RTT_LIB_PATH}/RTT/SEGGER_RTT.c
+    ${RTT_LIB_PATH}/Syscalls/SEGGER_RTT_Syscalls_GCC.c
+
+    CACHE INTERNAL
+        "segger rtt sources"
+)
+set(RTT_LIB_DIRS
+    ${RTT_LIB_PATH}/RTT
+    ${RTT_LIB_PATH}/Config
+
+    CACHE INTERNAL
+        "segger rtt include directories"
+)
+
+add_library(RTT_LIB
+    STATIC
+)
+target_sources(RTT_LIB
+    PRIVATE
+        ${RTT_LIB_SRCS}
+)
+target_include_directories(RTT_LIB
+    PUBLIC
+        ${RTT_LIB_DIRS}
 )
